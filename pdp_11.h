@@ -9,9 +9,9 @@ using std::hex;
 //---------------------------------------------------------------
 
 //---------------------------------------------------------types:
-typedef unsigned char Byte;         //or signed // 8 bit
-typedef unsigned short int Word;    //or signed // 16 bit
-typedef Word Adress;                // 16 bit
+typedef uint8_t Byte;
+typedef uint16_t Word;
+typedef Word Adress;
 //---------------------------------------------------------------
 
 //--------------------------------------------------------memory:

@@ -27,7 +27,7 @@ void test_word_read_2()
   b_write(new_adr + 1, second_byte);
   Word result_word = w_read(new_adr);
 
-  //assert(result_word == testing_word);
+  assert(result_word == testing_word);
 }
 
 void test_word_write_3(/*Adress adr, Word word*/)
@@ -37,6 +37,7 @@ void test_word_write_3(/*Adress adr, Word word*/)
 
   w_write(new_adr, testing_word);
   Word result_word = w_read(new_adr);
+  
   assert(result_word == testing_word);
 }
 
