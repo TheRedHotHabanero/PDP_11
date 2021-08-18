@@ -12,15 +12,15 @@ Byte b_read(Adress adr)
 
 Word w_read(Adress adr)
 {
-  Word new_word = ((Word)mem[adr + 1]) << bit_shift; //8 byte
-  new_word = new_word | mem[adr]; // &0xFF for signed
+  Word new_word = ((Word)mem[adr + 1]) << BIT_SHIFT;  //8 byte
+  new_word = new_word | mem[adr];                     // &0xFF for signed
   return new_word;
 }
 
 void w_write(Adress adr, Word word)
 {
-  Byte first_byte = (Byte)(word & 0xff); // right byte
-  Byte second_byte = (Byte)((word & 0xff00) >> bit_shift); //left byte
+  Byte first_byte = (Byte)(word & 0xff);                    // right byte
+  Byte second_byte = (Byte)((word & 0xff00) >> BIT_SHIFT);  //left byte
   mem[adr] = first_byte;
   mem[adr + 1] = second_byte;
 }
@@ -29,5 +29,6 @@ void w_write(Adress adr, Word word)
 int main()
 {
   mem_test();
+  cout << "hello" << endl;
   return 0;
 }

@@ -1,5 +1,5 @@
-#ifndef PDP_11_PDP11_H
-#define PDP_11_PDP11_H
+#ifndef PDP11_H
+#define PDP11_H
 
 //------------------------------------------------std components:
 using std::cin;
@@ -15,16 +15,16 @@ typedef Word Adress;
 //---------------------------------------------------------------
 
 //--------------------------------------------------------memory:
+const int BIT_SHIFT = sizeof(Byte) * 8;
 const int MEMSIZE = 64 * 1024;
 extern Byte mem[MEMSIZE];
-const int bit_shift = sizeof(Byte) * 8;
 //---------------------------------------------------------------
 
 //-----------------------------------------------------functions:
-void b_write(Adress adr, Byte byte);   //пишем байт b по адресу adr
-Byte b_read(Adress adr);            //читаем байт по адресу adr
-void w_write(Adress adr, Word word);   //пишем слово w по адресу adr
-Word w_read(Adress adr);            //читаем слово по адресу adr
+void b_write(Adress adr, Byte byte);  //write byte "byte" to "adr"
+Byte b_read(Adress adr);              //read byte at "adr"
+void w_write(Adress adr, Word word);  //write the word "word" at "adr"
+Word w_read(Adress adr);              //read the word at "adr"
 //---------------------------------------------------------------
 
-#endif //PDP_11_PDP11_H
+#endif //PDP11_H
